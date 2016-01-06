@@ -1,0 +1,43 @@
+<template name="index">
+
+    {{> nav}}
+
+    {{> queries}}
+
+    <input class="search-box" type="text">
+
+    {{> map}}
+
+    {{#if venues}}
+        <div style="padding: 8px">
+            <span class="venues-count">
+                {{venues.length}} venues
+            </span>
+            <button id="export-csv" class="btn btn-default btn-lg float">
+                Export CSV
+            </button>
+        </div>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>City</td>
+                <td>Street Address</td>
+                <td>Latitude</td>
+                <td>Longitude</td>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each venues}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{city}}</td>
+                <td>{{address}}</td>
+                <td>{{lat}}</td>
+                <td>{{lng}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+        </table>
+    {{/if}}
+</template>

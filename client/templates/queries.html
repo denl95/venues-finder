@@ -1,0 +1,18 @@
+<template name="queries">
+    {{#if queries}}
+        <table class="table table-striped">
+            <tbody>
+            {{#each queries}}
+                <tr>
+                    <td><span class="glyphicon glyphicon-trash"></span></td>
+                    <td style="font-weight: bolder">{{query}}</td>
+                    <td>{{lat}}</td>
+                    <td>{{lng}}</td>
+                    <td>{{km radius}}</td>
+                    <td>{{moment createdAt}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
+</template>
